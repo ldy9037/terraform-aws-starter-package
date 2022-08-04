@@ -46,6 +46,7 @@
 ## 참고
 - [Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 - [Terraform tfe Provider](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs)
+- [Standard Module Structure](https://www.terraform.io/language/modules/develop/structure)
 
 ## 제작자
 [ldy9037@naver.com](ldy9037@naver.com)
