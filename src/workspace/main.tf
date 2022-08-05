@@ -28,3 +28,10 @@ resource "tfe_organization_membership" "organization_membership" {
   organization = tfe_organization.organization.id
   email        = var.tfc_membership[count.index]
 }
+
+resource "tfe_team_organization_member" "team_organization_member" {
+  count = length(tfe_organization_membership.organization_membership)
+
+  team_id                    = data.tfe_team.owners.id
+  organization_membership_id = tfe_organization_membership.organization_membership[count.index].id
+}
