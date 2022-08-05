@@ -6,3 +6,6 @@ dynamodb_tfstate_lock_table_attributes = [{
   name = "LockID"
   type = "S"
 }]
+
+s3_log_bucket_name = "s3-tfstate-log-management-<ORGANIZATION>"
+s3_log_bucket_acl  = "log-delivery-write"

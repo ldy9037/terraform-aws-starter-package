@@ -35,3 +35,13 @@ variable "dynamodb_tfstate_lock_table_attributes" {
     type = string
   }))
 }
+
+variable "s3_log_bucket_name" {
+  description = "Log용 S3 Bucket 명"
+  type        = string
+}
+
+variable "s3_log_bucket_acl" {
+  description = "Log용 S3 Bucket ACL"
+  type        = string
+}

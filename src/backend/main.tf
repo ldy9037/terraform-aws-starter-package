@@ -25,3 +25,11 @@ module "dynamodb_tf_lock_table" {
 
   attributes = var.dynamodb_tfstate_lock_table_attributes
 }
+
+module "s3_log_bucket" {
+  source  = "terraform-aws-modules/s3-bucket/aws"
+  version = "3.1.1"
+
+  bucket = var.s3_log_bucket_name
+  acl    = var.s3_log_bucket_acl
+}
