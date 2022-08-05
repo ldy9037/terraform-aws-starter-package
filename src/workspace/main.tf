@@ -11,3 +11,8 @@ terraform {
 
 provider "tfe" {
 }
+
+resource "tfe_organization" "organization" {
+  name  = var.tfc_org
+  email = var.tfc_owner
+}
