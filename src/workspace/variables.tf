@@ -12,3 +12,8 @@ variable "tfc_defualt_team_name" {
   description = "Terraform Cloud 기본 생성 팀"
   type        = string
 }
+
+variable "tfc_membership" {
+  description = "Terraform Cloud 사용자"
+  type        = list(string)
+}

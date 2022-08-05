@@ -21,3 +21,10 @@ resource "tfe_organization" "organization" {
   name  = var.tfc_org
   email = var.tfc_owner
 }
+
+resource "tfe_organization_membership" "organization_membership" {
+  count = length(var.tfc_membership)
+
+  organization = tfe_organization.organization.id
+  email        = var.tfc_membership[count.index]
+}
