@@ -1,3 +1,8 @@
+variable "organization" {
+  description = "Organization 명"
+  type        = string
+}
+
 variable "region" {
   description = "AWS Region"
   type        = string

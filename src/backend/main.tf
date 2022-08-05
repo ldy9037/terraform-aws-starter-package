@@ -30,7 +30,7 @@ module "s3_log_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "3.1.1"
 
-  bucket = var.s3_log_bucket_name
+  bucket = "${var.s3_log_bucket_name}-${var.organization}"
   acl    = var.s3_log_bucket_acl
 }
 
