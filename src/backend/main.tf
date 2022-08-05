@@ -33,3 +33,22 @@ module "s3_log_bucket" {
   bucket = var.s3_log_bucket_name
   acl    = var.s3_log_bucket_acl
 }
+
+module "s3_tfstate_bucket" {
+  source  = "terraform-aws-modules/s3-bucket/aws"
+  version = "3.1.1"
+
+  bucket = var.s3_tfstate_bucket_name
+  acl    = var.s3_tfstate_bucket_acl
+
+  force_destroy = var.s3_tfstate_bucket_force_destroy
+
+  logging = {
+    target_bucket = module.s3_log_bucket.s3_bucket_id
+    target_prefix = var.s3_tfstate_bucket_logging_target_prefix
+  }
+
+  versioning = {
+    status = var.s3_tfstate_bucket_logging_versioning_status
+  }
+}
