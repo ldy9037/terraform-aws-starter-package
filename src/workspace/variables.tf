@@ -74,3 +74,8 @@ variable "slack_webhook_url" {
   description = "Slack Webhook URL"
   type        = string
 }
+
+variable "project_env" {
+  description = "프로젝트 환경"
+  type        = map(string)
+}

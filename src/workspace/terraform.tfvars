@@ -23,3 +23,8 @@ workspace_working_directory = {
 notification_configuration_destination_type = "slack"
 notification_configuration_enabled          = true
 notification_configuration_triggers         = ["run:created", "run:planning", "run:completed", "run:errored"]
+
+project_env = {
+  default = "prod"
+  dev     = "dev"
+}
