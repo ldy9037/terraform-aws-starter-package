@@ -1,3 +1,8 @@
+variable "region" {
+  description = "AWS Region"
+  type        = string
+}
+
 variable "tfc_org" {
   description = "Teraform Cloud Organization 이름"
   type        = string
@@ -78,4 +83,14 @@ variable "slack_webhook_url" {
 variable "project_env" {
   description = "프로젝트 환경"
   type        = map(string)
+}
+
+variable "tags_iac" {
+  description = "Resource에 어떤 IaC를 사용했는지"
+  type        = string
+}
+
+variable "tags_team" {
+  description = "어느 팀이 관리하고 있는지"
+  type        = string
 }

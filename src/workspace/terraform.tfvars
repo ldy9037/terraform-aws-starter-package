@@ -28,3 +28,8 @@ project_env = {
   default = "prod"
   dev     = "dev"
 }
+
+aws_account_id = "<AWS_ACCOUNT_NUM>"
+
+tags_iac  = "terraform"
+tags_team = "<TEAM_NAME>"
