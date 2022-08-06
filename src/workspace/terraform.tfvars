@@ -14,10 +14,12 @@ github_branch = {
 
 workspace_name = {
   iam     = "iam"
+  monitoring = "monitoring"
 }
 
 workspace_working_directory = {
   iam     = "aws_iam"
+  monitoring = "aws_monitoring"
 }
 
 notification_configuration_destination_type = "slack"
