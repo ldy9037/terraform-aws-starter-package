@@ -24,12 +24,12 @@
 만약 Slack 말고 다른 알림 채널을 사용하고 싶으시면 [여기](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/notification_configuration)서 가능한 알림 채널 중 하나를 선택해 구성할 수 있습니다.
 
 만약 알림 채널로 slack을 그대로 사용하겠다 하면 아래 문서를 참고해 Slack Webhook URL을 생성합니다.  
-- [Slack Webhook 생성 가이드](https://vntg.atlassian.net/wiki/spaces/INFRA/pages/446333215/Slack+API+App+Webhook)
+- [Slack Webhook 생성 가이드](https://harmonious-lan-9d2.notion.site/Slack-API-App-Webhook-db30f7ce0d514f4583d955808372f17e)
 
 이 알림 설정도 모든 workspace에서 같은 slack 채널을 공유하도록 설정되어 있습니다. 만약 workspace 별로 다른 slack 채널로 알림을 전송하고 싶다면 각 채널 별로 webhook URL 생성 후 각각 resource를 생성해 terraform cloud workspace와 연결해주시면 됩니다. 
 
 위 설정들이 끝났으면 실행에 필요한 환경 변수를 지정합니다. 여기서 지정한 환경변수는 Terraform 변수로도 사용됩니다.    
-[direnv](https://vntg.atlassian.net/wiki/spaces/INFRA/pages/208601091/Terraform+draft#direnv-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EB%B3%84-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95)를 사용하면 매번 변수를 export 하지않아도 됩니다. 
+[direnv](https://harmonious-lan-9d2.notion.site/direnv-89499a72674348ad893c79e87cf2a878)를 사용하면 매번 변수를 export 하지않아도 됩니다. 
 ```sh
 # s3 backend 설정
 export TF_VAR_region=ap-northeast-2 
@@ -64,7 +64,7 @@ tfc_membership = [
 
 ...
 
-github_username   = "VntgCorp"
+github_username   = "<GITHUB_USERNAME>"
 github_repository = "<GITHUB_REPOSITORY>"
 github_branch = {
   default = "main"
@@ -82,7 +82,7 @@ tags_team = "<TEAM_NAME>"
 ...
 ```
 - AWS_ACCOUNT: 이메일 형식의 AWS root account에서 계정 부분  
-(ex aws-tm-dev@vntgcorp.com 에서 aws-tm-dev)  
+(ex ldy9037@naver.com 에서 ldy9037)  
 - USER_EMAIL: Terraform Cloud 관리자 지정
 - GITHUB_REPOSITORY: Github Repository 명
 - AWS_ACCOUNT_ID: 숫자 형식의 AWS account ID  
@@ -94,9 +94,9 @@ tags_team = "<TEAM_NAME>"
 ```sh
 # ex
 tfc_membership = [
-  "test1@vntgcorp.com",
-  "test2@vntgcorp.com",
-  "test3@vntgcorp.com",
+  "test1@google.com",
+  "test2@naver.com",
+  "test3@daum.net",
   ...
 ]
 ```
