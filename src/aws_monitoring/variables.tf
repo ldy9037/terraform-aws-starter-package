@@ -183,3 +183,39 @@ variable "chatbot_enabled" {
   type        = bool
   default     = true
 }
+
+variable "slack_configuration_name" {
+  description = "slack configuration name"
+  type        = string
+  default     = ""
+}
+
+variable "slack_channel_id" {
+  description = "slack channel id"
+  type        = string
+  default     = ""
+}
+
+variable "slack_workspace_id" {
+  description = "slack_workspace_id"
+  type        = string
+  default     = ""
+}
+
+variable "chatbot_logging_level" {
+  description = "chatbot_logging_level"
+  type        = string
+  default     = ""
+}
+
+variable "chatbot_iam_role_name" {
+  description = "chatbot_iam_role_name"
+  type        = string
+  default     = ""
+}
+
+variable "chatbot_iam_role_policy_name" {
+  description = "chatbot_iam_role_policy_name"
+  type        = string
+  default     = ""
+}

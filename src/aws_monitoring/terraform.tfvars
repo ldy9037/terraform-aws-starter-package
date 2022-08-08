@@ -64,3 +64,9 @@ disabled_controls  = ["AWSOrganizationsChanges"]
 
 # chatbot
 chatbot_enabled              = true
+slack_configuration_name     = "CloudWatchAlarmsForCloudTrail"
+slack_channel_id             = "<SLACK_CHANNEL_ID>"
+slack_workspace_id           = "<SLACK_WORKSPACE_ID>"
+chatbot_logging_level        = "NONE"
+chatbot_iam_role_name        = "AWS-Chatbot-NotificationsOnly"
+chatbot_iam_role_policy_name = "AWS-Chatbot-NotificationsOnly-Policy"
