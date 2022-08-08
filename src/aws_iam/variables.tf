@@ -27,3 +27,8 @@ variable "iam_account_alias" {
   description = "iam account alias"
   type        = string
 }
+
+variable "iam_user" {
+  description = "IAM User 목록"
+  type        = map(any)
+}

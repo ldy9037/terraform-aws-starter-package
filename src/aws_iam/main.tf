@@ -32,3 +32,16 @@ provider "aws" {
 resource "aws_iam_account_alias" "alias" {
   account_alias = var.iam_account_alias
 }
+
+module "iam_user" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-user"
+  version = "5.1.0"
+
+  for_each = var.iam_user
+
+  name = each.key
+
+  create_iam_access_key         = each.value["iam_user_create_iam_access_key"]
+  create_iam_user_login_profile = each.value["iam_user_create_login_profile"]
+}
+
