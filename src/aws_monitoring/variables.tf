@@ -144,3 +144,29 @@ variable "event_selector" {
   }))
   default = []
 }
+
+# sns
+variable "sns_topic_enabled" {
+  description = "Boolean whether chatbot is enabled."
+  type        = bool
+  default     = true
+}
+
+variable "cloudwatch_sns_topic_name" {
+  description = "sns topic name for CloudWatch alert"
+  type        = string
+  default     = ""
+}
+
+variable "sns_topic_subscription_email" {
+  description = "sns topic subscription email"
+  type        = list(string)
+  default     = []
+}
+
+# chatbot
+variable "chatbot_enabled" {
+  description = "Boolean whether chatbot is enabled."
+  type        = bool
+  default     = true
+}

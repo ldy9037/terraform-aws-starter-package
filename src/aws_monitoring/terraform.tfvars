@@ -52,3 +52,11 @@ event_selector = [{
   data_resource = []
   }
 ]
+
+# sns
+sns_topic_enabled            = true
+cloudwatch_sns_topic_name    = "CloudWatchAlarmsForCloudTrail"
+sns_topic_subscription_email = ["<ALERT_EMAIL"]
+
+# chatbot
+chatbot_enabled              = true
