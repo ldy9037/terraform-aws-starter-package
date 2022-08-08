@@ -40,8 +40,14 @@
 
 
 ## 시작하기
+- [AWS CLI 가이드](https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-configure-files.html)를 참고해서 인증 정보를 먼저 등록해주세요.
+
+- 초기 설정 순서는 backend > workspace > iam > monitoring 입니다.  
+- 위 순서 맞게 디렉토리로 이동해서 README.md를 읽고 시작하기를 따라해주시면 됩니다.
+- 초기 세팅 이후 작업에 대한 가이드는 각 디렉토리의 README.md를 참고해주세요.
 
 ## 주의사항
+- [시작하기](#시작하기)에 작성되어 있는 순서대로 실행시키지 않으면 정상동작 하지 않습니다.
 
 ## 참고
 - [Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
