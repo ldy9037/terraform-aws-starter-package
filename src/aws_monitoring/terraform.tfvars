@@ -38,3 +38,17 @@ lifecycle_rule = [
 
 # cloudtrail
 cloudtrail_enabled                     = true
+cloudtrail_name                        = "management-event-trail"
+cloudtrail_cloudwatch_logs_enabled     = true
+cloudtrail_cloudwatch_logs_group_name  = "cloudtrail-multi-region"
+cloudwatch_logs_retention_in_days      = "180"
+cloudtrail_iam_role_name               = "CloudTrail-CloudWatch-Delivery-Role"
+cloudtrail_iam_role_policy_name        = "CloudTrail-CloudWatch-Delivery-Policy"
+cloudtrail_key_deletion_window_in_days = 10
+event_selector = [{
+  read_write_type           = "All"
+  include_management_events = true
+
+  data_resource = []
+  }
+]

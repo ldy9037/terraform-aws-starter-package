@@ -67,3 +67,21 @@ module "s3_bucket" {
 
   lifecycle_rule = var.lifecycle_rule
 }
+
+module "cloudtrail" {
+  count = var.cloudtrail_enabled ? 1 : 0
+
+  source = "./cloudtrail-baseline"
+
+  aws_account_id                    = var.aws_account_id
+  cloudtrail_name                   = var.cloudtrail_name
+  cloudwatch_logs_enabled           = var.cloudtrail_cloudwatch_logs_enabled
+  cloudwatch_logs_group_name        = var.cloudtrail_cloudwatch_logs_group_name
+  cloudwatch_logs_retention_in_days = var.cloudwatch_logs_retention_in_days
+  iam_role_name                     = var.cloudtrail_iam_role_name
+  iam_role_policy_name              = var.cloudtrail_iam_role_policy_name
+  key_deletion_window_in_days       = var.cloudtrail_key_deletion_window_in_days
+  region                            = var.region
+  s3_bucket_name                    = module.s3_bucket.s3_bucket_id
+  event_selector                    = var.event_selector
+}
