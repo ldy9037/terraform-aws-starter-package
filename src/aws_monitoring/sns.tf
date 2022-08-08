@@ -69,3 +69,14 @@ resource "aws_sns_topic_policy" "alarms" {
   arn    = aws_sns_topic.cloudwatch_alarms_for_cloudtrail[0].arn
   policy = data.aws_iam_policy_document.alarms_sns_policy.json
 }
+
+module "cis_alarms" {
+  count = var.cloudtrail_enabled && var.sns_topic_enabled && var.cis_alarms_enabled ? 1 : 0
+
+  source  = "terraform-aws-modules/cloudwatch/aws//modules/cis-alarms"
+  version = "~> 3.0"
+
+  log_group_name    = var.cloudtrail_cloudwatch_logs_group_name
+  alarm_actions     = [aws_sns_topic.cloudwatch_alarms_for_cloudtrail[0].arn]
+  disabled_controls = var.disabled_controls
+}

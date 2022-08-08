@@ -58,5 +58,9 @@ sns_topic_enabled            = true
 cloudwatch_sns_topic_name    = "CloudWatchAlarmsForCloudTrail"
 sns_topic_subscription_email = ["<ALERT_EMAIL"]
 
+#cis
+cis_alarms_enabled = false
+disabled_controls  = ["AWSOrganizationsChanges"]
+
 # chatbot
 chatbot_enabled              = true

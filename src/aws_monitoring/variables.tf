@@ -164,6 +164,19 @@ variable "sns_topic_subscription_email" {
   default     = []
 }
 
+# cis
+variable "cis_alarms_enabled" {
+  description = "Boolean cis alarms is enabled."
+  type        = bool
+  default     = true
+}
+
+variable "disabled_controls" {
+  description = "List of IDs of disabled CIS controls"
+  type        = list(string)
+  default     = []
+}
+
 # chatbot
 variable "chatbot_enabled" {
   description = "Boolean whether chatbot is enabled."
