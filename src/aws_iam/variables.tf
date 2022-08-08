@@ -22,3 +22,8 @@ variable "tags_environment" {
   description = "AWS Resource 환경"
   type        = string
 }
+
+variable "iam_account_alias" {
+  description = "iam account alias"
+  type        = string
+}
